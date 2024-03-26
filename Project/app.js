@@ -128,9 +128,9 @@ app.post('/addWines', function(req,res,next){
     });
 });
 
-app.get('/reviews', function(req, res){
-    res.render('reviews',{title: 'reviews'});
-});
+// app.get('/reviews', function(req, res){
+//     res.render('reviews',{title: 'reviews'});
+// });
 
 app.get('/learnmore', function(req,res){
     res.render('learnmore',{title: 'LearnMore'});
@@ -147,6 +147,41 @@ app.get('/addedWines', function(req,res){
 app.get('/logout',(req,res)=>{
     req.session.destroy();
     res.redirect('/');
+});
+
+// Route to handle GET requests to the review page
+app.get('/reviews', (req, res) => {
+    // Fetch existing reviews from the database
+    conn.query('SELECT * FROM `submit-review`', (error, results) => {
+            if (error) {
+                console.error('Error executing database query:', error);
+                res.status(500).send('Internal Server Error');
+                return;
+            }
+
+            // Render the 'reviews.ejs' template with the retrieved reviews
+            res.render('reviews', { reviews: results });
+        });
+    });
+ 
+
+// Route to handle POST requests to submit reviews
+app.post('/submit-review', (req, res) => {
+    const { name, rating, comment } = req.body;
+
+     // Insert the submitted review into the database
+     conn.query('INSERT INTO `submit-review` (`Name`, `Rating`, `Comment`) VALUES (?, ?, ?)', 
+     [name, rating, comment],
+     (error, results) => {
+         if (error) {
+             console.error('Error executing database query:', error);
+             res.status(500).send('Internal Server Error');
+             return;
+         }
+
+         // Redirect back to the reviews page after submission
+         res.redirect('/reviews');
+     });
 });
 
 app.listen(3000);
