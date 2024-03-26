@@ -1,0 +1,56 @@
+<%- include ("partials/header2.ejs") %>
+ 
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #0f0f0f;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr{
+        background-color: #ddd;
+    }
+</style>
+
+<table>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Vintage</th>
+    <th>Country</th>
+    <th>Region</th>
+    <th>Price</th>
+    <th>Description</th>  
+    
+    <% if (stillwinesData.length !=0) {var i=1; stillwinesData.forEach( function(data) {
+    %>
+    <tr>
+        
+        <td><%=data.Id %></td>
+        <td><%=data.Name %></td>
+        <td><%=data.Type %></td>
+        <td><%=data.Vintage %></td>
+        <td><%=data.Country %></td>
+        <td><%=data.Region %></td>
+        <td>$<%=data.Price %></td>
+        <td><%=data.Description %></td>
+        
+         
+         
+    </tr>
+   
+    <% i++; }) %> <%}%>
+    
+
+</table>
+
+<%- include ("partials/footer.ejs") %>
