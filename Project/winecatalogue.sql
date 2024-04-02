@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2024 at 11:53 PM
+-- Generation Time: Apr 02, 2024 at 11:32 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -46,8 +46,7 @@ CREATE TABLE `sparklingwines` (
 INSERT INTO `sparklingwines` (`Id`, `Name`, `Type`, `Vintage`, `Country`, `Region`, `Price`, `Description`, `user_id`) VALUES
 (44, 'Moet and Chandon', 'Champagne', 'NV', 'France', 'Champagne', 79.99, 'Refreshing and crisp taste with notes of peach and earth.', 3),
 (45, 'Cloudy Bay Pelorous NV', 'Sparkling Wine', 'NV', 'New Zealand', 'Marlborough', 49.99, 'The perfect amount of sweet and crispy, refreshing notes of plum and peach.', 1),
-(46, 'MOET AND CHANDON CHAMPAGNE GRAND VINTAGE ROSE', 'Champagne', '2013', 'France', 'Champagne', 135.00, 'Creamy and detailed in texture, this finely meshed ros Champagne wraps the firm backbone of acidity and rich minerality with toasted almond and dried cherry flavors, showing hints of Grand Marnier liqueur, smoke and spice on the lingering finish. Disgorged November 2013. Drink now through 2026.', 1),
-(47, 'ydrty', 'Sparkling Wine', 'tyt', 'tyft', 'tf', 54.36, 'ghjg', 3);
+(46, 'MOET AND CHANDON CHAMPAGNE GRAND VINTAGE ROSE', 'Champagne', '2013', 'France', 'Champagne', 135.00, 'Creamy and detailed in texture, this finely meshed ros Champagne wraps the firm backbone of acidity and rich minerality with toasted almond and dried cherry flavors, showing hints of Grand Marnier liqueur, smoke and spice on the lingering finish. Disgorged November 2013. Drink now through 2026.', 1);
 
 -- --------------------------------------------------------
 
@@ -152,13 +151,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `sparklingwines`
 --
 ALTER TABLE `sparklingwines`
-  MODIFY `Id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `Id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `submit-review`
 --
 ALTER TABLE `submit-review`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`

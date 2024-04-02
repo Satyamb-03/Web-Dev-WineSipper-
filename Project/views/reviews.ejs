@@ -1,19 +1,19 @@
-<%- include ("partials/header.ejs") %>
+<%- include ("partials/header.ejs") %> <!-- Includes the header -->
 
 <div class="container">
-    <h2 style="color:#800020">Customer Reviews:</h2>
-  
-    <% reviews.forEach(review => { %>
-        <div class="review">
-            <div class="reviewer"><%= review['Name'] %></div>
-            <div class="rating"><%= review.Rating %></div>
-            <div class="comment">
+    <h2 style="color:#800020">Customer Reviews:</h2>  
+
+    <% reviews.forEach(review => { %> <!-- Looping through each review -->
+        <div class="review"> <!-- Container for each review -->
+            <div class="reviewer"><%= review['Name'] %></div> 
+            <div class="rating"><%= review.Rating %></div> 
+            <div class="comment">  
                 "<%= review.Comment %>"
             </div>
         </div>
     <% }); %>
-  
-    <div class="user-review-form">
+
+    <div class="user-review-form"> <!-- Form for users to leave their own review -->
         <h3>Leave Your Review</h3>
         <form action="/submit-review" method="POST">
             <label for="name">Your Name:</label><br>
@@ -33,4 +33,4 @@
     </div>
 </div>
 
-<%- include ("partials/footer.ejs") %>
+<%- include ("partials/footer.ejs") %> <!-- Includes the footer -->

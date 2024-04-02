@@ -1,6 +1,7 @@
-<%- include ("partials/header2.ejs") %>
- 
+<%- include ("partials/header2.ejs") %> <!-- Includes the header -->
+
 <style>
+    /* CSS styles for the table */
     table {
         width: 100%;
         border-collapse: collapse;
@@ -21,8 +22,7 @@
     }
 </style>
 
-
-<table>
+<table> <!-- Table to display sparkling wines data -->
     <th>Id</th>
     <th>Name</th>
     <th>Type</th>
@@ -33,26 +33,22 @@
     <th>Description</th>  
     <th>user_id</th>
     
-    <% if (sparklingwinesData.length !=0) {var i=1; sparklingwinesData.forEach( function(data) {
-    %>
-    <tr>
+    <% if (sparklingwinesData.length !=0) {var i=1; sparklingwinesData.forEach( function(data) { %> <!-- Looping through the sparkling wines data -->
+    <tr> <!-- Table row for each wine data -->
         
-        <td><%=data.Id %></td>
-        <td><%=data.Name %></td>
-        <td><%=data.Type %></td>
+        <td><%=data.Id %></td>  
+        <td><%=data.Name %></td>  
+        <td><%=data.Type %></td> 
         <td><%=data.Vintage %></td>
         <td><%=data.Country %></td>
-        <td><%=data.Region %></td>
-        <td>$<%=data.Price %></td>
-        <td><%=data.Description %></td>
-        <td><%=data.user_id %></td>
-         
+        <td><%=data.Region %></td>  
+        <td>$<%=data.Price %></td>  
+        <td><%=data.Description %></td>  
+        <td><%=data.user_id %></td>  
          
     </tr>
    
     <% i++; }) %> <%}%>
-    
-
 </table>
 
-<%- include ("partials/footer.ejs") %>
+<%- include ("partials/footer.ejs") %> <!-- Includes the footer -->
