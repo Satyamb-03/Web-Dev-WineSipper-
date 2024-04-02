@@ -1,53 +1,50 @@
-<%- include ("partials/header2.ejs") %>
+<%- include ("partials/header2.ejs") %> <!-- Includes the header partial -->
+
 <div class="container">
-    <h3 style="color:#800020">Add Wines!!!</h3>
-    <p>You can now add the sparkling wines to our catalogue using the table given below.</p>
+    <h3 style="color:#800020">Add Wines!!!</h3> 
+    <p>You can now add the sparkling wines to our catalogue using the table given below.</p> 
 </div>
 
 <html>
 <head>
-    <title>Add Wine</title>
+    <title>Add Wine</title> <!-- Title of the page -->
 </head>
 <body>
     <div class="container">
-    <h1>Add Wine</h1>
-    <form action="/addWines" method="POST">
+    <h1>Add Wine</h1> 
+    <form action="/addWines" method="POST"> <!-- Form to submit wine details to the server -->
         
-        <label for="user_id">UserId:</label><br>
+        <label for="user_id">UserId:</label><br> <!-- Input field for user ID -->
         <input type="integer" id="user_id" name="user_id" required><br><br>
 
-        <!-- <label for="Id">Id:</label><br>
-        <input type="integer" id="Id" name="Id" required><br><br> -->
-
-        <label for="Name">Name:</label><br>
+        <label for="Name">Name:</label><br> <!-- Input field for wine name -->
         <input type="varchar" id="Name" name="Name" required><br><br>
 
-        <label for="Type">Type:</label><br>
+        <label for="Type">Type:</label><br> <!-- Dropdown for wine type -->
         <select id="Type" name="Type" required>
             <option value="Sparkling Wine">Sparkling Wine</option>
             <option value="Champagne">Champagne</option>
         </select><br><br>
 
-        <label for="Vintage">Vintage:</label><br>
+        <label for="Vintage">Vintage:</label><br> <!-- Input field for wine vintage -->
         <input type="varchar" id="Vintage" name="Vintage" required><br><br>
 
-        <label for="Country">Country:</label><br>
+        <label for="Country">Country:</label><br> <!-- Input field for wine country -->
         <input type="varchar" id="Country" name="Country" required><br><br>
 
-        <label for="Region">Region:</label><br>
+        <label for="Region">Region:</label><br> <!-- Input field for wine region -->
         <input type="varchar" id="Region" name="Region" required><br><br>
 
-        <label for="Price">Price:</label><br>
+        <label for="Price">Price:</label><br> <!-- Input field for wine price -->
         <input type="decimal" id="Price" name="Price" min="0" step="1" required><br><br>
 
-        <label for="Description">Description:</label><br>
-        <textarea id="Description" name="Description"   required></textarea><br><br>
-        
+        <label for="Description">Description:</label><br> <!-- Textarea for wine description -->
+        <textarea id="Description" name="Description" required></textarea><br><br>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"> <!-- Submit button to add wine -->
     </form>
 </div>
 </body>
 </html>
 
-<%- include ("partials/footer.ejs") %>
+<%- include ("partials/footer.ejs") %> <!-- Includes the footer partial -->
